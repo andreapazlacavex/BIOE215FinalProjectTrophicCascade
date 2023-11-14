@@ -22,7 +22,7 @@ Description of data and metadata are linked [here](data.md).
 
 ------------------------------------------------------------------------
 
-### **Computational analysis to replicate a key finding**
+### **Computational analysis**
 
 In order to replicate Figure 2a and 2b from [@smith2021] the following workflow has been planned for per figure
 
