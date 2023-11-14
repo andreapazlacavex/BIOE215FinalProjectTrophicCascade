@@ -14,11 +14,11 @@ For the purpose of this exercise, Andrea will be the Repository Maintainer in th
 
 ------------------------------------------------------------------------
 
-### Data adquisition
+### Data aquisition
 
 Data retrieved from Dryad are linked [here](https://datadryad.org/stash/dataset/doi:10.7291/D1566H).
 
-Description of data and metadata are linked [here](data.md).
+Description of data and metadata are linked [here](data.html).
 
 ------------------------------------------------------------------------
 
