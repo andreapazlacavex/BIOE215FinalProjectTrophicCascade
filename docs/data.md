@@ -9,7 +9,7 @@
 To replicate Smith *et al,* 2021 Figure 2a and 2b (see above), we require the following:
 
 | Kelp stipe density | Proportion of exposed urchins | Mean urchin gonad index |
-|-------------------|-----------------------------|------------------------|
+|--------------------|-------------------------------|-------------------------|
 | (no.stipes/m2)     | (per m2)                      | (per m2)                |
 
 This data can be found in data/raw_data/Smith_2017-19_benthic_data.csv
