@@ -8,4 +8,4 @@ Paper: Smith, J. G., Tomoleoni, J., Staedler, M., Lyon, S., Fujii, J., & Tinker,
 
 Figures we intend to replicate are: Figure 2 (a and b).
 
-Andrea will be the Repository Maintainer in the following GitHub Repository: https://github.com/andreapazlacavex/BIOE215FinalProjectTrophicCascade
+Andrea will be the Repository Maintainer in the following GitHub Repository: <https://github.com/andreapazlacavex/BIOE215FinalProjectTrophicCascade>
