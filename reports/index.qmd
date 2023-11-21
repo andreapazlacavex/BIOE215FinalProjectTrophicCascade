@@ -18,10 +18,10 @@ For the purpose of this exercise, Andrea will be the Repository Maintainer in th
 
 Data retrieved from Dryad are linked [here](https://datadryad.org/stash/dataset/doi:10.7291/D1566H).
 
-Description of data and metadata are linked [here](data.html).
+Description of data and metadata are linked [here](./data.html).
 
 ------------------------------------------------------------------------
 
 ### Data wrangling
 
-Analysis plan can be found [here](WrittenPlan.html).
+Analysis plan can be found [here](https://www.google.com).
