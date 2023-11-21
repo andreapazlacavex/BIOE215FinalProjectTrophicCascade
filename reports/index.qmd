@@ -24,4 +24,4 @@ Description of data and metadata are linked [here](./data.html).
 
 ### Data wrangling
 
-Analysis plan can be found [here](./WrittenPlan.html).
+Analysis plan can be found [here](./WrittenPlan.html) or found [here](./WrittenPlan.html).
