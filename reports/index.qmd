@@ -1,5 +1,5 @@
 ---
-bibliography: references.bib
+
 ---
 
 # Replicating "Behavioral responses across a mosaic of ecosystem states restructure a sea otter-urchin trophic cascade" by Smith et al, 2021.
@@ -14,7 +14,7 @@ For the purpose of this exercise, Andrea will be the Repository Maintainer in th
 
 ------------------------------------------------------------------------
 
-### Data aquisition
+### Data acquisition
 
 Data retrieved from Dryad are linked [here](https://datadryad.org/stash/dataset/doi:10.7291/D1566H).
 
@@ -22,14 +22,6 @@ Description of data and metadata are linked [here](data.html).
 
 ------------------------------------------------------------------------
 
-### **Computational analysis**
+### Data wrangling
 
-In order to replicate Figure 2a and 2b from [@smith2021] the following workflow has been planned for per figure
-
-#### Figure 2a
-
-1.  
-
-#### Figure 2b
-
-1.  
+Analysis plan can be found [here](WrittenPlan.md).
