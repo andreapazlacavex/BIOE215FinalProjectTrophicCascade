@@ -1,6 +1,7 @@
-------------------------------------------------------------------------
-
-------------------------------------------------------------------------
+---
+title: Trophic Cascade
+format: html
+---
 
 # Replicating "Behavioral responses across a mosaic of ecosystem states restructure a sea otter-urchin trophic cascade" by Smith et al, 2021.
 
@@ -12,15 +13,11 @@ This document is our Final Project for BIOE215 Data Science. This activity has t
 
 For the purpose of this exercise, Andrea will be the Repository Maintainer in the following GitHub Repository: <https://github.com/andreapazlacavex/BIOE215FinalProjectTrophicCascade>
 
-------------------------------------------------------------------------
-
 ### Data acquisition
 
 Data retrieved from Dryad are linked [here](https://datadryad.org/stash/dataset/doi:10.7291/D1566H).
 
 Description of data and metadata are linked [here](./data.html).
-
-------------------------------------------------------------------------
 
 ### Data wrangling
 
