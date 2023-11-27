@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Trophic Cascade</title>
+<title>writtenplan</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,16 +23,16 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="WrittenPlan_files/libs/clipboard/clipboard.min.js"></script>
+<script src="WrittenPlan_files/libs/quarto-html/quarto.js"></script>
+<script src="WrittenPlan_files/libs/quarto-html/popper.min.js"></script>
+<script src="WrittenPlan_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="WrittenPlan_files/libs/quarto-html/anchor.min.js"></script>
+<link href="WrittenPlan_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="WrittenPlan_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="WrittenPlan_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="WrittenPlan_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="WrittenPlan_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -43,39 +43,40 @@ ul.task-list li input[type="checkbox"] {
 
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Trophic Cascade</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<section id="replicating-behavioral-responses-across-a-mosaic-of-ecosystem-states-restructure-a-sea-otter-urchin-trophic-cascade-by-smith-et-al-2021." class="level1">
-<h1>Replicating “Behavioral responses across a mosaic of ecosystem states restructure a sea otter-urchin trophic cascade” by Smith et al, 2021.</h1>
-<p>Team members: Nikka Malakooti, Andrea Paz-Lacavex, Maddie Mcnelis, Cecilia Girvin.</p>
-<section id="objective" class="level3">
-<h3 class="anchored" data-anchor-id="objective">Objective</h3>
-<p>This document is our Final Project for BIOE215 Data Science. This activity has the objective of applying learned techniques to set up a computational analysis (using RStudio, git, and GitHub) and techniques for analyzing data (creating and accessing data structures, writing functions, and using the tidyverse). We have applied those skills to replicate Figure 2 (a and b) from <span class="citation" data-cites="smith2021">[@smith2021]</span>.</p>
-<p>For the purpose of this exercise, Andrea will be the Repository Maintainer in the following GitHub Repository: <a href="https://github.com/andreapazlacavex/BIOE215FinalProjectTrophicCascade" class="uri">https://github.com/andreapazlacavex/BIOE215FinalProjectTrophicCascade</a></p>
+<section id="computational-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="computational-analysis"><strong>Computational analysis</strong></h3>
+<p>In order to replicate Figure 2a and 2b from <span class="citation" data-cites="smith2021">[@smith2021]</span> the following workflow has been planned for per figure</p>
+<section id="figure-2a." class="level4">
+<h4 class="anchored" data-anchor-id="figure-2a.">Figure 2a.</h4>
+<ol type="1">
+<li><p>Create .R in /data</p></li>
+<li><p>Load the packages needed: Tidyverse, base r stats, ggplot2</p></li>
+<li><p>read_csv(“data/Smith_2017-19_benthic_data.csv”)</p></li>
+<li><p>Specify columns read.table() function to import the relevant columns and make numeric: Stipe_Density, Log+1_PUR_Density</p></li>
+<li><p>Create 2a_data using fread() function(“Smith_2017-19_benthic_data.csv”, select = c(“Stipe_Density”, “Log+1_PUR_Density”) to select working columns</p></li>
+<li><p>Deal with NAs using drop_na() function</p></li>
+<li><p>Plot Residual_Prop_urchins_exp by Stipe_Density, label axes</p></li>
+<li><p>Insert negative exponential decay function (nls function)</p></li>
+<li><p>add p-value, line equation, and R^2 value in top right quadrant</p></li>
+</ol>
 </section>
-<section id="data-acquisition" class="level3">
-<h3 class="anchored" data-anchor-id="data-acquisition">Data acquisition</h3>
-<p>Data retrieved from Dryad are linked <a href="https://datadryad.org/stash/dataset/doi:10.7291/D1566H">here</a>.</p>
-<p>Description of data and metadata are linked <a href="./data.html">here</a>.</p>
-</section>
-<section id="data-wrangling" class="level3">
-<h3 class="anchored" data-anchor-id="data-wrangling">Data wrangling</h3>
-<p>Analysis plan can be found <a href="./WrittenPlan.html">here</a>.</p>
+<section id="figure-2b." class="level4">
+<h4 class="anchored" data-anchor-id="figure-2b.">Figure 2b.</h4>
+<ol type="1">
+<li><p>Create .R in /data</p></li>
+<li><p>Load the packages needed: Tidyverse, base r stats, ggplot2</p></li>
+<li><p>read_csv(“data/Smith_2017-19_benthic_data.csv”)</p></li>
+<li><p>Specify columns read.table() function to import the relevant columns and make numeric: Gonad Index*, Residual_Prop_urchins_exp</p></li>
+<li><p>Create 2b_data using fread() function(“Smith_2017-19_benthic_data.csv”, select = c(“Gonad Index”, “Residual_Prop_urchins_exp”) to select working columns</p></li>
+<li><p>Deal with NAs using drop_na() function</p></li>
+<li><p>Plot Residual_Prop_urchins_exp by Gonad Index, and label axes</p></li>
+<li><p>Insert 95% confidence of fit and best fit line function</p></li>
+<li><p>add p-value, line equation, and R^2 value in top right quadrant</p></li>
+</ol>
+<p>*check to make sure this refers to the mean per m^2</p>
+<p>** Note to selves** where is references.bib?</p>
 </section>
 </section>
 

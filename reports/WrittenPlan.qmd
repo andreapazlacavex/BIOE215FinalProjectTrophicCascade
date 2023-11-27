@@ -1,0 +1,47 @@
+### **Computational analysis**
+
+In order to replicate Figure 2a and 2b from [@smith2021] the following workflow has been planned for per figure
+
+#### Figure 2a.
+
+1.  Create .R in /data
+
+2.  Load the packages needed: Tidyverse, base r stats, ggplot2
+
+3.  read_csv("data/Smith_2017-19_benthic_data.csv")
+
+4.  Specify columns read.table() function to import the relevant columns and make numeric: Stipe_Density, Log+1_PUR_Density
+
+5.  Create 2a_data using fread() function("Smith_2017-19_benthic_data.csv", select = c("Stipe_Density", "Log+1_PUR_Density") to select working columns
+
+6.  Deal with NAs using drop_na() function
+
+7.  Plot Residual_Prop_urchins_exp by Stipe_Density, label axes
+
+8.  Insert negative exponential decay function (nls function)
+
+9.  add p-value, line equation, and R\^2 value in top right quadrant
+
+#### Figure 2b.
+
+1.  Create .R in /data
+
+2.  Load the packages needed: Tidyverse, base r stats, ggplot2
+
+3.  read_csv("data/Smith_2017-19_benthic_data.csv")
+
+4.  Specify columns read.table() function to import the relevant columns and make numeric: Gonad Index\*, Residual_Prop_urchins_exp
+
+5.  Create 2b_data using fread() function("Smith_2017-19_benthic_data.csv", select = c("Gonad Index", "Residual_Prop_urchins_exp") to select working columns
+
+6.  Deal with NAs using drop_na() function
+
+7.  Plot Residual_Prop_urchins_exp by Gonad Index, and label axes
+
+8.  Insert 95% confidence of fit and best fit line function
+
+9.  add p-value, line equation, and R\^2 value in top right quadrant
+
+\*check to make sure this refers to the mean per m\^2
+
+\*\* Note to selves\*\* where is references.bib?
