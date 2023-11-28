@@ -1,0 +1,11 @@
+---
+title: Plan Execution Notes
+format: html
+---
+
+### 
+
+### Raw notes as we code 2a:
+
+-   There a typo in meta data, we need to use **Residual_Prop_urchins_exp** instead of the log transformed data (Log+1_PUR_Density). We noticed this issue because there are data points with negative y-axis values.
+-   
