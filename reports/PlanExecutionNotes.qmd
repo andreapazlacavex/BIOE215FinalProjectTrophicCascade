@@ -12,3 +12,4 @@ format: html
     -   Theirs: y = -0.16 + 0.33e^-3.11x^
     -   Ours: y = -0.17 + 0.35e^-2.87x^
 -   We didn't put the equation in yet, and the tick marks and labels are slightly different, maybe fix this if time permits.
+-   ![](images/Screenshot 2023-11-27 at 5.17.39 PM.png)
