@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Trophic Cascade</title>
+<title>Plan Execution Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,16 +23,16 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="PlanExecutionNotes_files/libs/clipboard/clipboard.min.js"></script>
+<script src="PlanExecutionNotes_files/libs/quarto-html/quarto.js"></script>
+<script src="PlanExecutionNotes_files/libs/quarto-html/popper.min.js"></script>
+<script src="PlanExecutionNotes_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="PlanExecutionNotes_files/libs/quarto-html/anchor.min.js"></script>
+<link href="PlanExecutionNotes_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="PlanExecutionNotes_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="PlanExecutionNotes_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="PlanExecutionNotes_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="PlanExecutionNotes_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Trophic Cascade</h1>
+<h1 class="title">Plan Execution Notes</h1>
 </div>
 
 
@@ -60,24 +60,21 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="replicating-behavioral-responses-across-a-mosaic-of-ecosystem-states-restructure-a-sea-otter-urchin-trophic-cascade-by-smith-et-al-2021." class="level1">
-<h1>Replicating “Behavioral responses across a mosaic of ecosystem states restructure a sea otter-urchin trophic cascade” by Smith et al, 2021.</h1>
-<p>Team members: Nikka Malakooti, Andrea Paz-Lacavex, Maddie Mcnelis, Cecilia Girvin.</p>
-<section id="objective" class="level3">
-<h3 class="anchored" data-anchor-id="objective">Objective</h3>
-<p>This document is our Final Project for BIOE215 Data Science. This activity has the objective of applying learned techniques to set up a computational analysis (using RStudio, git, and GitHub) and techniques for analyzing data (creating and accessing data structures, writing functions, and using the tidyverse). We have applied those skills to replicate Figure 2 (a and b) from <span class="citation" data-cites="smith2021">[@smith2021]</span>.</p>
-<p>For the purpose of this exercise, Andrea will be the Repository Maintainer in the following GitHub Repository: <a href="https://github.com/andreapazlacavex/BIOE215FinalProjectTrophicCascade" class="uri">https://github.com/andreapazlacavex/BIOE215FinalProjectTrophicCascade</a></p>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
 </section>
-<section id="data-acquisition" class="level3">
-<h3 class="anchored" data-anchor-id="data-acquisition">Data acquisition</h3>
-<p>Data retrieved from Dryad are linked <a href="https://datadryad.org/stash/dataset/doi:10.7291/D1566H">here</a>.</p>
-<p>Description of data and metadata are linked <a href="./data.html">here</a>.</p>
-</section>
-<section id="data-wrangling" class="level3">
-<h3 class="anchored" data-anchor-id="data-wrangling">Data wrangling</h3>
-<p>Analysis plan can be found <a href="./WrittenPlan.html">here</a>.</p>
-<p>General notes found <a href="./PlanExecutionNotes.html">here</a>.</p>
-</section>
+<section id="raw-notes-as-we-code-2a" class="level3">
+<h3 class="anchored" data-anchor-id="raw-notes-as-we-code-2a">Raw notes as we code 2a:</h3>
+<ul>
+<li>There a typo in meta data, we need to use <strong>Residual_Prop_urchins_exp</strong> instead of the log transformed data (Log+1_PUR_Density). We noticed this issue because there are data points with negative y-axis values.</li>
+<li>Our calculated start values are different from what they have on their negative exponential decay function.
+<ul>
+<li>Theirs: y = -0.16 + 0.33e<sup>-3.11x</sup></li>
+<li>Ours: y = -0.17 + 0.35e<sup>-2.87x</sup></li>
+</ul></li>
+<li>We didn’t put the equation in yet, and the tick marks and labels are slightly different, maybe fix this if time permits.</li>
+<li><img src="images/Screenshot%202023-11-27%20at%205.17.39%20PM.png" class="img-fluid"></li>
+</ul>
 </section>
 
 </main>

@@ -8,4 +8,8 @@ format: html
 ### Raw notes as we code 2a:
 
 -   There a typo in meta data, we need to use **Residual_Prop_urchins_exp** instead of the log transformed data (Log+1_PUR_Density). We noticed this issue because there are data points with negative y-axis values.
--   
+-   Our calculated start values are different from what they have on their negative exponential decay function.
+    -   Theirs: y = -0.16 + 0.33e^-3.11x^
+    -   Ours: y = -0.17 + 0.35e^-2.87x^
+-   We didn't put the equation in yet, and the tick marks and labels are slightly different, maybe fix this if time permits.
+-   ![](images/Screenshot 2023-11-27 at 5.17.39 PM.png)

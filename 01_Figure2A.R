@@ -20,12 +20,19 @@ b <- coef(fit)["b"]
 c <- coef(fit)["c"]
 # do the same for b and c
 predictions <- tibble(
-  Stipe_Density = seq(0, 13, by = 0.01), # change start, end, and step_length
+  Stipe_Density = seq(-0.33, 13, by = 0.01), # change start, end, and step_length
   Residual_Prop_urchins_exp = a + b * exp(c * Stipe_Density)
 )
 
 ## Trying to plot
 # Basic scatter plot
-ggplot(data, aes(x=Stipe_Density, y=Residual_Prop_urchins_exp)) + 
-  geom_point() +
-  geom_line(data=predictions)
+figure2a<-ggplot(data, aes(x=Stipe_Density, y=Residual_Prop_urchins_exp)) + 
+  geom_point(color="darkgrey") +
+  geom_line(data=predictions, size=1.25)+
+  theme_classic()+
+  labs(x = "kelp stipe density (No.stipes/m2)", y = "proportion of urchins exposed (residuals)")
+
+#save figure
+ggsave("figures/figure2a.png", plot=figure2a,width = 10, height = 10, units = "in" )
+
+
