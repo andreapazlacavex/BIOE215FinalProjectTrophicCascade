@@ -2,6 +2,8 @@
 ### This is the file where we make figure 2a from Smith et al 2021
 ### 
 
+rm(list=ls()) 
+
 ### Load packages
 ## nlme 
 library("tidyverse")
@@ -32,7 +34,12 @@ figure2a<-ggplot(data, aes(x=Stipe_Density, y=Residual_Prop_urchins_exp)) +
   theme_classic()+
   labs(x = "kelp stipe density (No.stipes/m2)", y = "proportion of urchins exposed (residuals)")
 
+figure2a
+
 #save figure
 ggsave("figures/figure2a.png", plot=figure2a,width = 10, height = 10, units = "in" )
+
+#save for use in Quarto report
+saveRDS(figure2a, "figures/figure2a.rds")
 
 

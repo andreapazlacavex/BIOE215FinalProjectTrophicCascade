@@ -1,15 +1,48 @@
 ---
-title: Plan Execution Notes
+title: Plan Execution
 format: html
 ---
 
-### 
+# Replication of Figure 2a from Smith *et al*, 2021.
 
-### Raw notes as we code 2a:
+In order to replicate Figure 2a [@smith2021] the following workflow was executed. As you'll see below, steps had to be added to the original plan to achieve replication, shown in italics.
 
--   There a typo in meta data, we need to use **Residual_Prop_urchins_exp** instead of the log transformed data (Log+1_PUR_Density). We noticed this issue because there are data points with negative y-axis values.
--   Our calculated start values are different from what they have on their negative exponential decay function.
-    -   Theirs: y = -0.16 + 0.33e^-3.11x^
-    -   Ours: y = -0.17 + 0.35e^-2.87x^
--   We didn't put the equation in yet, and the tick marks and labels are slightly different, maybe fix this if time permits.
--   ![](images/Screenshot 2023-11-27 at 5.17.39 PM.png)
+![Figure 1. Original Figure 2a from Smith et al, 2021 - Sea urchin foraging behavior (exposed, concealed) and condition (gonad index) as a function of kelp density. Residuals from a linear regression on the log-transformed proportion of exposed urchins (to account for urchin density) fit with a negative exponential decay function with kelp stipe density.](images/ORIGINAL_figure2a.png){fig-align="center" width="416"}
+
+### Execution plan for Figure 2a:
+
+1.  Create .R in /data
+
+2.  Load the packages needed: Tidyverse, base r stats, ggplot2
+
+3.  read_csv("data/Smith_2017-19_benthic_data.csv")
+
+4.  Specify columns read.table() function to import the relevant columns and make numeric: Stipe_Density, Log+1_PUR_Density
+
+    *a. There a typo in meta data, we need to use **Residual_Prop_urchins_exp** instead of the log transformed data (Log+1_PUR_Density). We noticed this issue because there are data points with negative y-axis values.*
+
+5.  Create 2a_data using fread() function("Smith_2017-19_benthic_data.csv", select = c("Stipe_Density", "Log+1_PUR_Density") to select working columns
+
+    *a. Our calculated start values are different from what they have on their negative exponential decay function.*
+
+    -   *Theirs: y = -0.16 + 0.33e^-3.11x^*
+    -   *Ours: y = -0.17 + 0.35e^-2.87x^*
+
+6.  Deal with NAs using drop_na() function
+
+7.  Plot Residual_Prop_urchins_exp by Stipe_Density, label axes
+
+8.  Insert negative exponential decay function (nls function)
+
+9.  add p-value, line equation, and R\^2 value in top right quadrant
+
+    *a. We didn't put the equation in yet, and the tick marks and labels are slightly different, maybe fix this if time permits.*
+
+### Results:
+
+```{r}
+#| label: fig-2a
+#| fig-cap: Replication from Figure 2a from Smith et al, 2021 - Sea urchin foraging behavior (exposed, concealed) and condition (gonad index) as a function of kelp density. Residuals from a linear regression on the log-transformed proportion of exposed urchins (to account for urchin density) fit with a negative exponential decay function with kelp stipe density.
+figure2a<- readRDS(here::here("figures/figure2a.rds"))
+figure2a
+```

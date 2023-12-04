@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Plan Execution Notes</title>
+<title>Plan Execution</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -45,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Plan Execution Notes</h1>
+<h1 class="title">Plan Execution</h1>
 </div>
 
 
@@ -60,21 +94,54 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
-</section>
-<section id="raw-notes-as-we-code-2a" class="level3">
-<h3 class="anchored" data-anchor-id="raw-notes-as-we-code-2a">Raw notes as we code 2a:</h3>
+<section id="replication-of-figure-2a-from-smith-et-al-2021." class="level1">
+<h1>Replication of Figure 2a from Smith <em>et al</em>, 2021.</h1>
+<p>In order to replicate Figure 2a <span class="citation" data-cites="smith2021">[@smith2021]</span> the following workflow was executed. As you’ll see below, steps had to be added to the original plan to achieve replication, shown in italics.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ORIGINAL_figure2a.png" class="img-fluid figure-img" width="416"></p>
+<figcaption class="figure-caption">Figure 1. Original Figure 2a from Smith et al, 2021 - Sea urchin foraging behavior (exposed, concealed) and condition (gonad index) as a function of kelp density. Residuals from a linear regression on the log-transformed proportion of exposed urchins (to account for urchin density) fit with a negative exponential decay function with kelp stipe density.</figcaption>
+</figure>
+</div>
+<section id="execution-plan-for-figure-2a" class="level3">
+<h3 class="anchored" data-anchor-id="execution-plan-for-figure-2a">Execution plan for Figure 2a:</h3>
+<ol type="1">
+<li><p>Create .R in /data</p></li>
+<li><p>Load the packages needed: Tidyverse, base r stats, ggplot2</p></li>
+<li><p>read_csv(“data/Smith_2017-19_benthic_data.csv”)</p></li>
+<li><p>Specify columns read.table() function to import the relevant columns and make numeric: Stipe_Density, Log+1_PUR_Density</p>
+<p><em>a. There a typo in meta data, we need to use <strong>Residual_Prop_urchins_exp</strong> instead of the log transformed data (Log+1_PUR_Density). We noticed this issue because there are data points with negative y-axis values.</em></p></li>
+<li><p>Create 2a_data using fread() function(“Smith_2017-19_benthic_data.csv”, select = c(“Stipe_Density”, “Log+1_PUR_Density”) to select working columns</p>
+<p><em>a. Our calculated start values are different from what they have on their negative exponential decay function.</em></p>
 <ul>
-<li>There a typo in meta data, we need to use <strong>Residual_Prop_urchins_exp</strong> instead of the log transformed data (Log+1_PUR_Density). We noticed this issue because there are data points with negative y-axis values.</li>
-<li>Our calculated start values are different from what they have on their negative exponential decay function.
-<ul>
-<li>Theirs: y = -0.16 + 0.33e<sup>-3.11x</sup></li>
-<li>Ours: y = -0.17 + 0.35e<sup>-2.87x</sup></li>
+<li><em>Theirs: y = -0.16 + 0.33e<sup>-3.11x</sup></em></li>
+<li><em>Ours: y = -0.17 + 0.35e<sup>-2.87x</sup></em></li>
 </ul></li>
-<li>We didn’t put the equation in yet, and the tick marks and labels are slightly different, maybe fix this if time permits.</li>
-<li><img src="images/Screenshot%202023-11-27%20at%205.17.39%20PM.png" class="img-fluid"></li>
-</ul>
+<li><p>Deal with NAs using drop_na() function</p></li>
+<li><p>Plot Residual_Prop_urchins_exp by Stipe_Density, label axes</p></li>
+<li><p>Insert negative exponential decay function (nls function)</p></li>
+<li><p>add p-value, line equation, and R^2 value in top right quadrant</p>
+<p><em>a. We didn’t put the equation in yet, and the tick marks and labels are slightly different, maybe fix this if time permits.</em></p></li>
+</ol>
+</section>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results:</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>figure2a<span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"figures/figure2a.rds"</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>figure2a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 90 rows containing missing values (`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-2a" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="PlanExecutionNotes_files/figure-html/fig-2a-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Replication from Figure 2a from Smith et al, 2021 - Sea urchin foraging behavior (exposed, concealed) and condition (gonad index) as a function of kelp density. Residuals from a linear regression on the log-transformed proportion of exposed urchins (to account for urchin density) fit with a negative exponential decay function with kelp stipe density.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
 </section>
 
 </main>
