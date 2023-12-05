@@ -1,0 +1,48 @@
+# Replicating "Behavioral responses across a mosaic of ecosystem states restructure a sea otter-urchin trophic cascade" by Smith et al, 2021.
+
+Course: BIOE215 Data Science.
+
+Instructor: Max Czapanskiy
+
+Team members: Nikka Malakooti, Andrea Paz-Lacavex, Maddie Mcnelis, Cecilia Girvin.
+
+Fall Quarter 2023
+
+### Objective
+
+This Quarto document is our Final Paper for BIOE215 Data Science. For this activity we used techniques to set up a computational analysis (using RStudio, git, and GitHub) and techniques for analyzing data (creating and accessing data structures, writing functions, and using the tidyverse). We have applied those skills to replicate Figure 2 (a and b) from [@smith2021].
+
+## Introduction
+
+The paper describes a shift in top predator foraging due to altered grazer body condition, illustrating the importance of trait-mediated interactions in ecosystem stability. The authors study urchin barrens-kelp forest mosaics in the Monterey Bay where sea otters move among patches of kelp and barrens to feed on urchins; they show these otters preferentially predate on kelp forest urchins. The finding we replicate in figure 2A show a dramatically lower proportion of exposed sea urchins (the y-axis shows the residuals from a linear regression on the log-transformed proportion of exposed urchins) coincident with higher kelp stipe density. Most urchins were concealed where the mean kelp stipe density was greater than one stipe per square meter.
+
+## Summary of findings
+
+Smith and collaborators used data from 236 underwater surveys that covered randomly selected sites. Each site was sampled using 8, 5m transects over the summer of 2017. Kelp stipe density was the number of stipes in the entire survey area (78 m\^2). Urchin foraging behavior was determined by analyzing photographs of 2 randomly placed quadrats from each site. How exposed urchins were determined whether they were actively foraging. Data is a CSV file, each row representing one site, and each column representing either an identifier of that site or data associated with that site.
+
+## Summary of methods
+
+### Data acquisition
+
+Data retrieved from Dryad are linked [here](https://datadryad.org/stash/dataset/doi:10.7291/D1566H).
+
+Description of data and metadata are linked [here](./data.html).
+
+### Data wrangling
+
+Analysis plan can be found [here](./WrittenPlan.html).
+
+General notes found [here](./PlanExecutionNotes.html).
+
+## Description of results
+
+```{r}
+#| label: fig-2a
+#| fig-cap: Replication from Figure 2a from Smith et al, 2021 - Sea urchin foraging behavior (exposed, concealed) and condition (gonad index) as a function of kelp density. Residuals from a linear regression on the log-transformed proportion of exposed urchins (to account for urchin density) fit with a negative exponential decay function with kelp stipe density.
+figure2a<- readRDS(here::here("figures/figure2a.rds"))
+figure2a
+```
+
+## Discussion
+
+Our results closely matched that of the original paper. The only difference we ran into was that we fit a slightly different negative exponential decay function to the data. Some aesthetics of our figure are also slightly different, though we confidently feel that we could more closely replicate if necessary! 
