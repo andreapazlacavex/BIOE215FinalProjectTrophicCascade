@@ -7,7 +7,7 @@ format: html
 
 In order to replicate Figure 2a [@smith2021] the following workflow was executed. As you'll see below, steps had to be added to the original plan to achieve replication, shown in italics.
 
-![Figure 1. Original Figure 2a from Smith et al, 2021 - Sea urchin foraging behavior (exposed, concealed) and condition (gonad index) as a function of kelp density. Residuals from a linear regression on the log-transformed proportion of exposed urchins (to account for urchin density) fit with a negative exponential decay function with kelp stipe density.](images/ORIGINAL_figure2a.png){fig-align="center" width="416"}
+![Figure 1. Original Figure 2a from Smith *et al,* 2021 - Sea urchin foraging behavior (exposed, concealed) and condition (gonad index) as a function of kelp density. Residuals from a linear regression on the log-transformed proportion of exposed urchins (to account for urchin density) fit with a negative exponential decay function with kelp stipe density.](images/ORIGINAL_figure2a.png){fig-align="center" width="416"}
 
 ### Execution plan for Figure 2a:
 
